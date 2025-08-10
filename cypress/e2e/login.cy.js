@@ -1,6 +1,6 @@
 describe('Teste da API - Login', () => {
 
-  it('Deve auteenticar com sucesso e retornar um token', () => {
+  it('Deve autenticar com sucesso e retornar um token', () => {
     cy.request({
       method: 'POST',
       url: 'login',

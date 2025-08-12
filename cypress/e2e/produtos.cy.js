@@ -59,6 +59,9 @@ describe('Teste da API - Produtos', () => {
                 "descricao": "Smartphone com Ultra IA",
                 "quantidade": 200
 }
+        }).then((response) =>{
+            expect(response.status).equal(200)
+            expect(response.body.message).equal('Registro alterado com sucesso')
         })
        })
     });

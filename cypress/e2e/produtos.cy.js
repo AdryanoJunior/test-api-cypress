@@ -1,9 +1,17 @@
+import contrato from '../contratos/produtos.contrato.js'
+
 describe('Teste da API - Produtos', () => {
 
     let token
     beforeEach(() => {
         cy.token('fulano@qa.com', 'teste').then(authorization =>{
             token = authorization
+        })
+    });
+
+    it('Deve validar contrato de produtos com sucesso', () => {
+        cy.request('produtos').then(response =>{
+            return contrato.validateAsync(response.body)
         })
     });
     

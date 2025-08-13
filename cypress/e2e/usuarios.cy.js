@@ -1,3 +1,4 @@
+import contrato from '../contratos/usuarios.contrato.js'
 
 describe('Teste da API - Usuarios', () => {
 
@@ -7,6 +8,12 @@ describe('Teste da API - Usuarios', () => {
             token = authorization
         })
         
+    });
+
+    it('Deve validar contrato de usuários com sucesso', () => {
+        cy.request('usuarios').then(response =>{
+            return contrato.validateAsync(response.body)
+        })
     });
     
     it('Deve listar todos os usuários cadastrados - GET', () => {

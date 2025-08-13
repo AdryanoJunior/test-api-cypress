@@ -32,7 +32,7 @@ describe('Teste da API - Produtos', () => {
         })
     });
 
-    it('Validar mensagem de produto ja cadastrado - POST', () => {
+    it('Validar mensagem de produto já cadastrado anteriormente - POST', () => {
         cy.request({
             method: 'POST',
             url: 'produtos',
